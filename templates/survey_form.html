@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #9fb1b5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #004d99;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Survey Form</h1>
+        <form action="/submit-survey" method="post">
+            <label>First Name:</label>
+            <input type="text" name="first_name" required>
+
+            <label>Last Name:</label>
+            <input type="text" name="last_name" required>
+
+            <label>Street Address:</label>
+            <input type="text" name="street_address">
+
+            <label>City:</label>
+            <input type="text" name="city">
+
+            <label>State:</label>
+            <input type="text" name="state">
+
+            <label>ZIP Code:</label>
+            <input type="text" name="zip">
+
+            <label>Telephone:</label>
+            <input type="text" name="phone">
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Date of Survey:</label>
+            <input type="date" name="survey_date" required>
+
+            <label>What did you like most?</label>
+            <select name="liked_most">
+                <option value="Students">Students</option>
+                <option value="Location">Location</option>
+                <option value="Campus">Campus</option>
+                <option value="Atmosphere">Atmosphere</option>
+                <option value="Dorm Rooms">Dorm Rooms</option>
+                <option value="Sports">Sports</option>
+            </select>
+
+            <label>How did you become interested?</label>
+            <select name="interested_via">
+                <option value="Friends">Friends</option>
+                <option value="Television">Television</option>
+                <option value="Internet">Internet</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label>Likelihood of recommending:</label>
+            <select name="recommendation">
+                <option value="Very Likely">Very Likely</option>
+                <option value="Likely">Likely</option>
+                <option value="Unlikely">Unlikely</option>
+            </select>
+
+            <button type="submit">Submit Survey</button>
+        </form>
+    </div>
+</body>
+</html>
