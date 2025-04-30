@@ -3,4 +3,6 @@ uvicorn
 sqlalchemy
 pymysql
 python-dotenv
-email-validator
+jinja2
+python-multipart
+cryptography

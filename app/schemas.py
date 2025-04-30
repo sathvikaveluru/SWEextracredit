@@ -1,28 +1,21 @@
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel
+from typing import Optional
 from datetime import date
 
-class SurveyBase(BaseModel):
+class SurveySchema(BaseModel):
+    id: Optional[int]
     first_name: str
     last_name: str
-    street_address: str
-    city: str
-    state: str
-    zip_code: str
-    phone: str
-    email: EmailStr
+    street_address: Optional[str]
+    city: Optional[str]
+    state: Optional[str]
+    zip: Optional[str]
+    phone: Optional[str]
+    email: str
     survey_date: date
-    liked_most: str
-    interested_via: str
-    recommendation: str
-
-class SurveyCreate(SurveyBase):
-    pass
-
-class SurveyUpdate(SurveyBase):
-    pass
-
-class SurveyResponse(SurveyBase):
-    id: int
+    liked_most: Optional[str]
+    interested_via: Optional[str]
+    recommendation: Optional[str]
 
     class Config:
         orm_mode = True

@@ -6,7 +6,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #9fb1b5;
+            background-color: #f0f2f5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,30 +16,43 @@
         .container {
             background: white;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 500px;
         }
         h1 {
             text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+        .row input {
+            flex: 1;
         }
         label {
             font-weight: bold;
+            margin-top: 10px;
         }
         input, select {
             width: 100%;
             padding: 8px;
-            margin: 8px 0 20px 0;
+            margin-top: 5px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
         }
         button {
-            width: 100%;
-            padding: 10px;
+            margin-top: 20px;
+            padding: 12px;
             background-color: #004d99;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
         }
@@ -50,31 +63,27 @@
 </head>
 <body>
     <div class="container">
-        <h1>Survey Form</h1>
+        <h1>Campus Visit Survey</h1>
         <form action="/submit-survey" method="post">
-            <label>First Name:</label>
-            <input type="text" name="first_name" required>
+            <label>Name:</label>
+            <div class="row">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+            </div>
 
-            <label>Last Name:</label>
-            <input type="text" name="last_name" required>
-
-            <label>Street Address:</label>
-            <input type="text" name="street_address">
-
-            <label>City:</label>
-            <input type="text" name="city">
-
-            <label>State:</label>
-            <input type="text" name="state">
-
-            <label>ZIP Code:</label>
-            <input type="text" name="zip">
-
-            <label>Telephone:</label>
-            <input type="text" name="phone">
+            <label>Address:</label>
+            <input type="text" name="street_address" placeholder="Street Address">
+            <div class="row">
+                <input type="text" name="city" placeholder="City">
+                <input type="text" name="state" placeholder="State">
+            </div>
+            <div class="row">
+                <input type="text" name="zip" placeholder="ZIP Code">
+                <input type="text" name="phone" placeholder="Phone Number">
+            </div>
 
             <label>Email:</label>
-            <input type="email" name="email" required>
+            <input type="email" name="email" placeholder="Email" required>
 
             <label>Date of Survey:</label>
             <input type="date" name="survey_date" required>

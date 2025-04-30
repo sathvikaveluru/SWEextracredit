@@ -4,10 +4,9 @@ WORKDIR /app
 
 COPY . .
 
-RUN pip install --no-cache-dir -r requirements.txt
-# Add this extra line to ensure uvicorn is installed
-RUN pip install uvicorn
+# 👇 Add this line to ensure the .env file is included
+COPY .env .env
 
-EXPOSE 8080
+RUN pip install --no-cache-dir -r requirements.txt
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
