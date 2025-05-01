@@ -15,7 +15,7 @@ app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
 
-# ✅ Correct helper function
+
 def get_db():
     db = SessionLocal()
     try:
