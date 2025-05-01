@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-# 👇 Add this line to ensure the .env file is included
+
 COPY .env .env
 
 RUN pip install --no-cache-dir -r requirements.txt
